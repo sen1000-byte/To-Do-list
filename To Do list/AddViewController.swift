@@ -11,12 +11,11 @@ import UIKit
 class AddViewController: UIViewController {
 
     @IBOutlet var name: UITextField!
-
     
     let saveData = UserDefaults.standard
     
     var nameArray: [String] = []
-    var dateArray: [Int] = []
+    var dateArray: [String] = []
     var importanceArray: [Bool] = []
     
     //日時入力
@@ -24,7 +23,6 @@ class AddViewController: UIViewController {
     @IBOutlet weak var dateField: UITextField!
     //UIDatePickerを定義するための関数
     var datePicker: UIDatePicker = UIDatePicker()
-    
     
     //この追加ページに来たときに毎回一番最初に発動されるfunc
     override func viewDidLoad() {
@@ -34,13 +32,13 @@ class AddViewController: UIViewController {
             nameArray = saveData.array(forKey: "name") as! [String]
         }
         if saveData.array(forKey: "date") != nil {
-            dateArray = saveData.array(forKey: "date") as! [Int]
+            dateArray = saveData.array(forKey: "date") as! [String]
         }
         if saveData.array(forKey: "importance") != nil {
             importanceArray = saveData.array(forKey: "importance") as! [Bool]
         }
         
-        //ピッカー設定
+        //ピッカー設定!!！！！日付に関してよくわかってへんよ！！！！！！！！！！！
         datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
         datePicker.timeZone = NSTimeZone.local
         datePicker.locale = Locale.current
@@ -68,17 +66,33 @@ class AddViewController: UIViewController {
         
         dateField.text = "\(formatter.string(from: datePicker.date))"
     }
-
     
+    //スイッチボタン
+    var importance: Bool! = true
+    @IBOutlet var output: UILabel!
+    @IBAction func onoffswitch(_ sender: UISwitch){
+        if sender.isOn {
+            output.text = "重要"
+            importance = true
+        }else {
+            output.text = "重要でない"
+            importance = false
+        }
+    }
     
     
     //保存ボタンが押されたときに発動
     @IBAction func saveList() {
-        //空でないかチェック！！これだとスペースが入ってたら大丈夫になっちゃう！！
-        if name.text != "" {
+        //空でないかチェック！！！！！これだとスペースが入ってたら大丈夫になっちゃう！！！！！
+        if name.text != "" && dateField.text != "" {
             nameArray.append(String(name.text!))
+            dateArray.append(String(dateField.text!))
+            importanceArray.append(importance)
             saveData.set(nameArray, forKey: "name")
+            saveData.set(dateArray, forKey: "date")
             name.text = ""
+            dateField.text = ""
+            importance = true
             performSegue(withIdentifier: "toViewController", sender: nil)
         }else{
             let alert = UIAlertController(title: "エラー", message: "項目を全て埋めてください", preferredStyle: .alert)

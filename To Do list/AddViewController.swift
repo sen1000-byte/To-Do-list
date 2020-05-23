@@ -19,6 +19,13 @@ class AddViewController: UIViewController {
     var dateArray: [Int] = []
     var importanceArray: [Bool] = []
     
+    //日時入力
+    //UItextFieldに紐付け
+    @IBOutlet weak var dateField: UITextField!
+    //UIDatePickerを定義するための関数
+    var datePicker: UIDatePicker = UIDatePicker()
+    
+    
     //この追加ページに来たときに毎回一番最初に発動されるfunc
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +39,36 @@ class AddViewController: UIViewController {
         if saveData.array(forKey: "importance") != nil {
             importanceArray = saveData.array(forKey: "importance") as! [Bool]
         }
-        // Do any additional setup after loading the view.
+        
+        //ピッカー設定
+        datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.locale = Locale.current
+        dateField.inputView = datePicker
+        
+        //決定バーの生成
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+        let spaceItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        toolbar.setItems([spaceItem, doneItem], animated: true)
+        
+        //インプットビュー設定UITexfieldへ代入
+        dateField.inputView = datePicker
+        dateField.inputAccessoryView = toolbar
+        
     }
+    
+    //UIDatePickerのDaneで発動
+    @objc func done() {
+        dateField.endEditing(true)
+        
+        //日付フォーマット
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:MM"
+        
+        dateField.text = "\(formatter.string(from: datePicker.date))"
+    }
+
     
     
     

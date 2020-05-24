@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var deadlinelabel1: UILabel!
     @IBOutlet var namelabel2: UILabel!
     @IBOutlet var datelabel2: UILabel!
-    @IBOutlet var fusen1: UIImageView!
+    @IBOutlet var fusen1: UILabel!
     
     
     var nameArray: [String?] = []
@@ -30,8 +30,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //色編準備ViewImageを.imgageWithRenderingMode(.AlwaysTemplate)に指定して、テンプレートとして描写できるように
-        fusen1.image = fusen1.image?.withRenderingMode(.alwaysTemplate)
         
         //！！！！！！！空白の時ように?? [] を付け加えてみたけれど、どう作用するかはわからない！！！！！！！！
         nameArray = (saveData.array(forKey: "name") ?? [""]) as [String]
@@ -61,17 +59,17 @@ class ViewController: UIViewController {
             //色変化をする
             let defferenceInt: Int = difference.minute!
             if defferenceInt <= 1440 || importanceArray[0]! == true {
-                fusen1.tintColor = UIColor.red
+                fusen1.backgroundColor = UIColor.red
             }else if defferenceInt <= 4320 {
-                fusen1.tintColor = UIColor.yellow
+                fusen1.backgroundColor = UIColor.yellow
             }else{
-                fusen1.tintColor = UIColor.green
+                fusen1.backgroundColor = UIColor.green
             }
             
             
         }else{
             deadlinelabel1.text = ""
-            fusen1.tintColor = UIColor.blue
+            fusen1.backgroundColor = UIColor.blue
         }
         
         

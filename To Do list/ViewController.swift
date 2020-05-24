@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var deadlinelabel1: UILabel!
     @IBOutlet var namelabel2: UILabel!
     @IBOutlet var datelabel2: UILabel!
+    @IBOutlet var fusen1: UIImageView!
     
     
     var nameArray: [String?] = []
@@ -28,10 +29,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //色編準備ViewImageを.imgageWithRenderingMode(.AlwaysTemplate)に指定して、テンプレートとして描写できるように
+        fusen1.image = fusen1.image?.withRenderingMode(.alwaysTemplate)
+        
         //！！！！！！！空白の時ように?? [] を付け加えてみたけれど、どう作用するかはわからない！！！！！！！！
         nameArray = (saveData.array(forKey: "name") ?? [""]) as [String]
         dateArray = (saveData.array(forKey: "date") ?? [""]) as [String]
-        importanceArray = (saveData.array(forKey: "importance") ?? []) as [Bool]
+        importanceArray = (saveData.array(forKey: "importance") ?? [false]) as [Bool]
         
         //残り時間を計算する
         let dateFormater = DateFormatter()
@@ -39,19 +44,34 @@ class ViewController: UIViewController {
         dateFormater.dateFormat = "yyyy/MM/dd HH:mm"
 
         if dateArray[0] != "" {
+            //締切日を取得する
             let date = dateFormater.date(from: dateArray[0]!)!
             let currentDate = Date()
+            //差を計算する
             let cal = Calendar(identifier: .gregorian)
             let difference = cal.dateComponents([.minute], from: currentDate, to: date)
             // 書式を設定する
             let formatter = DateComponentsFormatter()
             // 表示単位を指定
-            formatter.unitsStyle = .brief
+            formatter.unitsStyle = .abbreviated
             // 表示する時間単位を指定
             formatter.allowedUnits = [.hour, .minute]
             deadlinelabel1.text = (formatter.string(from: difference)!)
+            
+            //色変化をする
+            let defferenceInt: Int = difference.minute!
+            if defferenceInt <= 1440 || importanceArray[0]! == true {
+                fusen1.tintColor = UIColor.red
+            }else if defferenceInt <= 4320 {
+                fusen1.tintColor = UIColor.yellow
+            }else{
+                fusen1.tintColor = UIColor.green
+            }
+            
+            
         }else{
-                deadlinelabel1.text = ""
+            deadlinelabel1.text = ""
+            fusen1.tintColor = UIColor.blue
         }
         
         
@@ -67,7 +87,7 @@ class ViewController: UIViewController {
             datelabel1.text = ""
         }
         //2つ目のふせんコーナー
-        if nameArray.count <= 2 && dateArray.count <= 2 {
+        if nameArray.count >= 2 && dateArray.count >= 2 {
             namelabel2.text = nameArray[1]
             datelabel2.text = dateArray[1]
         }else {

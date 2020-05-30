@@ -87,9 +87,10 @@ class AddViewController: UIViewController {
         if name.text != "" && dateField.text != "" {
             nameArray.append(String(name.text!))
             dateArray.append(String(dateField.text!))
-            importanceArray.append(importance)
+            importanceArray.append(Bool(importance!))
             saveData.set(nameArray, forKey: "name")
             saveData.set(dateArray, forKey: "date")
+            saveData.set(importanceArray, forKey: "importance")
             name.text = ""
             dateField.text = ""
             importance = true

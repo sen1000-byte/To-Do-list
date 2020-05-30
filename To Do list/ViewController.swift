@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var nameArray: [String?] = []
     var dateArray: [String?] = []
     var importanceArray: [Bool?] = []
+    var bottoms: [UIButton] = [] //空かどうか判定をしよう！！！！！！！！！
     //スマホの保存場所から取り出し
     let saveData = UserDefaults.standard
     
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
         dateFormater.locale = Locale(identifier: "ja_JP")
         dateFormater.dateFormat = "yyyy/MM/dd HH:mm"
 
+        
         if dateArray[0] != "" {
             //締切日を取得する
             let date = dateFormater.date(from: dateArray[0]!)!
@@ -65,6 +67,11 @@ class ViewController: UIViewController {
             }else{
                 fusen1.backgroundColor = UIColor.green
             }
+            
+            
+            
+            
+            
             
             
         }else{
@@ -93,7 +100,35 @@ class ViewController: UIViewController {
             datelabel2.text = ""
         }
         
+        let screenSize = UIScreen.main.bounds.size
+        //繰り返しを利用して表示させていく
+        if nameArray[0] != "" {
+            for i in 0 ..< nameArray.count {
+                //背景ラベルの作成
+                let backgroundLabel: UILabel = UILabel(frame: CGRect(x: screenSize.width - 180, y: 100, width: 180, height: 100))
+                backgroundLabel.backgroundColor = UIColor.orange
+                //ボタンの作成
+                let buttom = UIButton()
+                buttom.frame = CGRect(x: screenSize.width/2 - 180, y: 80, width: 80, height: 80)
+                buttom.backgroundColor = UIColor.init(red: 1.0, green: 0.9, blue: 1.0, alpha: 1.0)
+                buttom.tag = i
+                buttom.addTarget(self, action: #selector(ViewController.buttomTapped(_:)), for: .touchUpInside)
+                self.view.addSubview(buttom)
+                
+                //nameをラベルに表示
+                let namelabel: UILabel =  UILabel(frame: CGRect(x: screenSize.width/2 , y: 100, width: 170, height: 100))
+                namelabel.text = nameArray[i]
+                
+                //日付をラベルに表示
+                let datelabel = UILabel()
+                datelabel.text = dateArray[i]
+            
+            }
+        }
 
+    }
+    
+    @objc func buttomTapped(_ sender : UIButton){
     }
     
     //realm保存する機能+保存時間を所得する機能

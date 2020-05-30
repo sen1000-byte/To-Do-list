@@ -16,6 +16,8 @@
 		33670D152478A5B0005A5936 /* To_Do_listTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33670D142478A5B0005A5936 /* To_Do_listTests.swift */; };
 		33670D202478A5B0005A5936 /* To_Do_listUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33670D1F2478A5B0005A5936 /* To_Do_listUITests.swift */; };
 		33670D6A2478E184005A5936 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33670D692478E184005A5936 /* AddViewController.swift */; };
+		33E5C46B247A20970028D0FB /* SaveListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5C46A247A20970028D0FB /* SaveListTableViewController.swift */; };
+		33E5C46D247A21360028D0FB /* SaveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5C46C247A21360028D0FB /* SaveListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		33670D1F2478A5B0005A5936 /* To_Do_listUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_listUITests.swift; sourceTree = "<group>"; };
 		33670D212478A5B0005A5936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33670D692478E184005A5936 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		33E5C46A247A20970028D0FB /* SaveListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListTableViewController.swift; sourceTree = "<group>"; };
+		33E5C46C247A21360028D0FB /* SaveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				33670D082478A5AF005A5936 /* LaunchScreen.storyboard */,
 				33670D0B2478A5AF005A5936 /* Info.plist */,
 				33670D692478E184005A5936 /* AddViewController.swift */,
+				33E5C46A247A20970028D0FB /* SaveListTableViewController.swift */,
+				33E5C46C247A21360028D0FB /* SaveListTableViewCell.swift */,
 			);
 			path = "To Do list";
 			sourceTree = "<group>";
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33E5C46D247A21360028D0FB /* SaveListTableViewCell.swift in Sources */,
 				33670D022478A5A9005A5936 /* ViewController.swift in Sources */,
 				33670CFE2478A5A9005A5936 /* AppDelegate.swift in Sources */,
+				33E5C46B247A20970028D0FB /* SaveListTableViewController.swift in Sources */,
 				33670D6A2478E184005A5936 /* AddViewController.swift in Sources */,
 				33670D002478A5A9005A5936 /* SceneDelegate.swift in Sources */,
 			);

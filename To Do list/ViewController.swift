@@ -92,7 +92,36 @@ class ViewController: UIViewController {
             namelabel2.text = ""
             datelabel2.text = ""
         }
+        
 
+    }
+    
+    //realm保存する機能+保存時間を所得する機能
+    func saveToRealm() {
+        
+    }
+    //保存された時にUserDefaultsからその番号のものを消す機能
+    //
+    
+    @IBAction func done() {
+        //確認アラート表示　はい(ページ移動、保存）、キャンセル（何も）
+        let checkAlert = UIAlertController(title: "確認",
+                                           message: "このタスクを完了にしていいですか",
+                                           preferredStyle: .alert)
+        let checkAlertDefault = UIAlertAction(title: "Yes",
+                                              style: .default,
+                                              handler: {
+                                                (action: UIAlertAction!) -> Void in
+                                                //realm保存
+                                                //UserDefaulsから削除
+                                                self.performSegue(withIdentifier: "ToSave", sender: nil)
+        })
+        let checkAlertCancel = UIAlertAction(title: "Cancel",
+                                             style: .cancel,
+                                             handler: nil)
+        checkAlert.addAction(checkAlertDefault)
+        checkAlert.addAction(checkAlertCancel)
+        present(checkAlert, animated: true, completion: nil)
     }
     
     

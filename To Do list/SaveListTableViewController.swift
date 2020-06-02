@@ -7,13 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SaveListTableViewController: UITableViewController {
-    
-    var nameArray: [String] = []
-    var dateArray: [String] = []
-    
-    let saveData = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +21,9 @@ class SaveListTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    //変わるよ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+
     override func viewWillAppear(_ animated: Bool) {
-        //もしも中身が入ってたら（空じゃなかったら）、スマホの保存場所から取り出して,それぞれの配列に代入する
-        if saveData.array(forKey: "name") != nil {
-            nameArray = saveData.array(forKey: "name") as! [String]
-        }
-        if saveData.array(forKey: "date") != nil {
-            dateArray = saveData.array(forKey: "date") as! [String]
-        }
+
         
         tableView.reloadData()
     }
@@ -49,7 +39,7 @@ class SaveListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return nameArray.count
+        return 1
     }
 
     /*

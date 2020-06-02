@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
     
     var nameArray: [String?] = []
     var dateArray: [String?] = []
     var importanceArray: [Bool?] = []
-    var bottoms: [UIButton] = [] //空かどうか判定をしよう！！！！！！！！！
+
     //スマホの保存場所から取り出し
     let saveData = UserDefaults.standard
     
@@ -21,6 +22,9 @@ class ViewController: UIViewController {
     let screenSize = UIScreen.main.bounds.size
     var positionX: CGFloat = 0.0
     var positionY: CGFloat = -130
+    
+    //realm発動
+    let realm = try! Realm()
 
 
     override func viewDidLoad() {
@@ -126,10 +130,14 @@ class ViewController: UIViewController {
 
         }
         
+         print(Realm.Configuration.defaultConfiguration.fileURL!)
 
     }
     //保存ボタンが押された時の動作
     @objc func buttomTapped(_ sender : UIButton){
+        //ボタンのtagを取得
+        let buttomtag: Int = sender.tag
+        
         //確認アラート表示　はい(ページ移動、保存）、キャンセル（何も）
         let checkAlert = UIAlertController(title: "確認",
                                            message: "このタスクを完了にしていいですか",
@@ -138,9 +146,38 @@ class ViewController: UIViewController {
                                               style: .default,
                                               handler: {
                                                   (action: UIAlertAction!) -> Void in
-                                                  //realm保存
-                                                  //UserDefaulsから削除
-                                                  self.performSegue(withIdentifier: "ToSave", sender: nil)
+                                                //押された時間の取得
+                                                let tappedDate = Date()
+                                                let tappedDateFormatter = DateFormatter()
+                                                tappedDateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+                                                let submitDate = tappedDateFormatter.string(from: tappedDate)
+                                                
+                                                //Realmに保存するよ
+                                                //newcompletedTask　という保存するボックスを作る
+                                                let newcompletedTask = completedTasks()
+                                                //Realmの各要素に追加してく
+                                                newcompletedTask.name = self.nameArray[buttomtag]!
+                                                newcompletedTask.date = self.dateArray[buttomtag]!
+                                                newcompletedTask.importance = self.importanceArray[buttomtag]!
+                                                newcompletedTask.submitDate = submitDate
+                                                //Realmに書き込む！
+                                                try! self.realm.write{
+                                                    self.realm.add(newcompletedTask)
+                                                }
+                                                
+                                                //それぞれの配列から削除
+                                                self.nameArray.remove(at: buttomtag)
+                                                self.dateArray.remove(at: buttomtag)
+                                                self.importanceArray.remove(at: buttomtag)
+                                                
+                                                //要素を削除した配列ををUserDefaultに上書き保存
+                                                self.saveData.set(self.nameArray, forKey: "name")
+                                                self.saveData.set(self.dateArray, forKey: "date")
+                                                self.saveData.set(self.importanceArray, forKey: "importance")
+                                                
+                                                self.viewDidLoad()
+                                                
+                                                //self.performSegue(withIdentifier: "ToSave", sender: nil)
         })
         let checkAlertCancel = UIAlertAction(title: "Cancel",
                                              style: .cancel,
@@ -150,11 +187,6 @@ class ViewController: UIViewController {
         present(checkAlert, animated: true, completion: nil)
     }
     
-    //realm保存する機能+保存時間を所得する機能
-    func saveToRealm() {
-        
-    }
-    //保存された時にUserDefaultsからその番号のものを消す機能
 
     
     

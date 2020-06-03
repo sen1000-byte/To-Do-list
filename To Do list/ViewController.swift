@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     var positionX: CGFloat = 0.0
     var positionY: CGFloat = -130
     
-    //realm発動
+    //realmインスタンスなんかな？作った！
     let realm = try! Realm()
 
 
@@ -175,7 +175,7 @@ class ViewController: UIViewController {
                                                 self.saveData.set(self.dateArray, forKey: "date")
                                                 self.saveData.set(self.importanceArray, forKey: "importance")
                                                 
-                                                self.viewDidLoad()
+                                                //self.viewDidLoad()
                                                 
                                                 //self.performSegue(withIdentifier: "ToSave", sender: nil)
         })

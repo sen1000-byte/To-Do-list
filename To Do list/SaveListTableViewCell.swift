@@ -12,8 +12,8 @@ class SaveListTableViewCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var submitDate: UILabel!
-    @IBOutlet var importance: UILabel!
+    @IBOutlet var submitDateLabel: UILabel!
+    @IBOutlet var importanceLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

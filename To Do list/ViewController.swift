@@ -200,7 +200,9 @@ class ViewController: UIViewController {
                                                 
                                                 //self.viewDidLoad()
                                                 
-                                                //self.performSegue(withIdentifier: "ToSave", sender: nil)
+                                                //self.performSegue(withIdentifier: "homeNavigationController", sender: nil)
+                                                self.reset()
+                                                
         })
         let checkAlertCancel = UIAlertAction(title: "Cancel",
                                              style: .cancel,
@@ -208,6 +210,12 @@ class ViewController: UIViewController {
         checkAlert.addAction(checkAlertDefault)
         checkAlert.addAction(checkAlertCancel)
         present(checkAlert, animated: true, completion: nil)
+    }
+    
+    func reset() {
+        let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "homeNavigationController") as! UINavigationController
+        navigationController.modalPresentationStyle = .fullScreen
+        self.present(navigationController, animated: false, completion: nil)
     }
     
 

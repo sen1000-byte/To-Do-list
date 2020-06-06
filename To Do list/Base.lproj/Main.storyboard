@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DVH-wd-Nqo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -30,20 +30,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="チェック"/>
                                 <connections>
-                                    <segue destination="iZt-GH-JGv" kind="presentation" modalPresentationStyle="fullScreen" id="PHX-3d-HeR"/>
+                                    <segue destination="bi5-sC-o0N" kind="presentation" modalPresentationStyle="fullScreen" id="qvb-Bo-BTW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="終了したタスクを確認する" width="467" id="JWO-ez-Whk">
+                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="bi5-sC-o0N" kind="presentation" modalPresentationStyle="fullScreen" id="ad2-fF-gBX"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="4II-3C-KlQ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="120.53571428571428"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="yN5-46-qtP">
@@ -58,10 +65,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="キャンセル"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="rOd-yF-9la"/>
+                                    <segue destination="DVH-wd-Nqo" kind="presentation" modalPresentationStyle="fullScreen" id="rOd-yF-9la"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-0I-zjz">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbC-0I-zjz">
                                 <rect key="frame" x="159" y="275" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -76,7 +83,7 @@
                                     <action selector="saveList" destination="GEr-Se-pf7" eventType="touchUpInside" id="7Ii-Bi-Nbb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUF-Lb-glM">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUF-Lb-glM">
                                 <rect key="frame" x="159" y="384" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -118,14 +125,14 @@
                         <outlet property="dateField" destination="XUF-Lb-glM" id="zcj-D5-rvA"/>
                         <outlet property="name" destination="TbC-0I-zjz" id="gTC-Io-AyI"/>
                         <outlet property="output" destination="hbP-wm-Xvd" id="Rke-Ei-Pfx"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="1sY-9i-MG0"/>
+                        <segue destination="DVH-wd-Nqo" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="1sY-9i-MG0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPE-O1-FDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="125.89285714285714"/>
+            <point key="canvasLocation" x="1805.7971014492755" y="125.89285714285714"/>
         </scene>
-        <!--Title-->
+        <!--終了したタスク一覧-->
         <scene sceneID="9Wa-UV-BKJ">
             <objects>
                 <tableViewController id="iZt-GH-JGv" customClass="SaveListTableViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,34 +184,62 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="PSJ-wS-mmX"/>
+                    <navigationItem key="navigationItem" title="終了したタスク一覧" id="Cs1-gR-g7b">
+                        <barButtonItem key="leftBarButtonItem" title="もどる" id="JZz-TU-nqn">
+                            <connections>
+                                <segue destination="DVH-wd-Nqo" kind="presentation" modalPresentationStyle="fullScreen" id="GuZ-ut-Hkq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBq-nE-3bK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="847.76785714285711"/>
+            <point key="canvasLocation" x="1157" y="848"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="pY3-OY-ZMZ">
+        <scene sceneID="pFN-VK-Iec">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uSC-qW-IQy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bi5-sC-o0N" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aUr-Vp-SxA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="plh-mc-one">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="iZt-GH-JGv" kind="relationship" relationship="rootViewController" id="rjm-kj-hAL"/>
+                        <segue destination="iZt-GH-JGv" kind="relationship" relationship="rootViewController" id="D6E-fc-QEK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MmF-fk-f3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xl7-Bz-Kxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="848"/>
+            <point key="canvasLocation" x="393" y="848"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jib-LW-uFW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="DVH-wd-Nqo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qLe-Cf-tyO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ax9-9Z-T9p">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uIl-si-aDt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W00-Bz-hvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PHX-3d-HeR"/>
-        <segue reference="rOd-yF-9la"/>
+        <segue reference="1sY-9i-MG0"/>
+        <segue reference="ad2-fF-gBX"/>
     </inferredMetricsTieBreakers>
 </document>

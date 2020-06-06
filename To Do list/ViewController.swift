@@ -41,12 +41,22 @@ class ViewController: UIViewController {
         let dateFormater = DateFormatter()
         dateFormater.locale = Locale(identifier: "ja_JP")
         dateFormater.dateFormat = "yyyy/MM/dd HH:mm"
+        
+        //スクロールのインスタンス
+        let scrollView = UIScrollView()
+        //scrolViewの大きさ指定
+        scrollView.frame = self.view.frame
 
         //ここの条件どうしたらいいんだろう？!!!!!!!!!!!!!!!!!!!!!!!!!!
         if nameArray[0] != "" && dateArray[0] != "" {
+        //if nameArray.isEmpty != true{
             
             //繰り返しを利用して、それぞれのブロックを表示していくよ
             for i in 0 ..< nameArray.count {
+                
+                //スクロール領域の設定
+                scrollView.contentSize = CGSize(width: Int(screenSize.width), height:200 + 130 * nameArray.count / 2 )
+
                 
                 //位置を偶数奇数で分ける
                 if i % 2 == 0 {
@@ -67,28 +77,23 @@ class ViewController: UIViewController {
                 let checkimage: UIImage = UIImage(named: "check")!
                 let checkimageview: UIImageView = UIImageView(image: checkimage)
                     checkimageview.frame = CGRect(x: buttomX, y: positionY + 165, width: 30, height: 30)
-                //画像表示
-                self.view.addSubview(checkimageview)
-                
+
                 //ボタンの作成
                 let buttom = UIButton()
                 buttom.frame = CGRect(x: buttomX, y: positionY + 165, width: 30, height: 30)
                 buttom.tag = i
                 buttom.addTarget(self, action: #selector(ViewController.buttomTapped(_:)), for: .touchUpInside)
-                //ボタン表示
-                self.view.addSubview(buttom)
+
                 
                 //nameをラベル作成
                 let namelabel: UILabel =  UILabel(frame: CGRect(x: labelsX, y: positionY + 105, width: 160, height: 30))
                 namelabel.text = nameArray[i]
-                //name表示
-                self.view.addSubview(namelabel)
+
                 
                 //日付をラベル作成
                 let datelabel = UILabel(frame: CGRect(x: labelsX, y: positionY + 140, width: 150, height: 25))
                 datelabel.text = dateArray[i]
-                //日付表示
-                self.view.addSubview(datelabel)
+
                 
                 //残り時間の計算に入るよ
                 //締切日を取得する
@@ -107,9 +112,7 @@ class ViewController: UIViewController {
                 //残り時間ラベル作成
                 let deadlinelabel = UILabel(frame: CGRect(x: labelsX, y: positionY + 170, width: 100, height: 25))
                 deadlinelabel.text = (formatter.string(from: difference)!)
-                //残り時間表示
-                self.view.addSubview(deadlinelabel)
-                
+
                 //背景ラベルの色を変更する
                 //時間さを単位「分」で数字として入手する
                 let defferenceInt: Int = difference.minute!
@@ -120,12 +123,32 @@ class ViewController: UIViewController {
                 }else{
                     backgroundLabel.backgroundColor = UIColor.green
                 }
+                
                 //背景ラベル表示
-                self.view.addSubview(backgroundLabel)
+                scrollView.addSubview(backgroundLabel)
                 //背景ラベルを後ろへ移動
-                self.view.sendSubviewToBack(backgroundLabel)
+                //self.view.sendSubviewToBack(backgroundLabel)
+                //画像表示(scrillViewに追加)
+                //self.view.addSubview(checkimageview)
+                scrollView.addSubview(checkimageview)
+                //ボタン表示(scrillViewに追加)
+                scrollView.addSubview(buttom)
+                //name表示
+                //self.view.addSubview(namelabel)
+                scrollView.addSubview(namelabel)
+                //日付表示
+                scrollView.addSubview(datelabel)
+                //残り時間表示
+                scrollView.addSubview(deadlinelabel)
+                
             }
             
+            //xcrollviewをviwのsubviewとして追加
+            self.view.addSubview(scrollView)
+            self.view.sendSubviewToBack(scrollView)
+            
+
+
         }else{
 
         }

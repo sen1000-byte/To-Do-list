@@ -65,6 +65,10 @@ class SaveListTableViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func back() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

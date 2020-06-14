@@ -11,9 +11,16 @@ import RealmSwift
 
 class ViewController: UIViewController {
     
+    //ラベル系配列
     var nameArray: [String?] = []
     var dateArray: [String?] = []
     var importanceArray: [Bool?] = []
+    
+    //色系配列
+    var colorArray: [String] = []
+    var redArray: [CGFloat] = []
+    var greenArray: [CGFloat] = []
+    var blueArray: [CGFloat] = []
 
     //スマホの保存場所から取り出し
     let saveData = UserDefaults.standard
@@ -25,17 +32,25 @@ class ViewController: UIViewController {
     
     //realmインスタンスなんかな？作った！
     let realm = try! Realm()
-
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         
         //！！！！！！！空白の時ように?? [] を付け加えてみたけれど、どう作用するかはわからない！！！！！！！！
         nameArray = (saveData.array(forKey: "name") ?? [""]) as [String]
         dateArray = (saveData.array(forKey: "date") ?? [""]) as [String]
         importanceArray = (saveData.array(forKey: "importance") ?? [false]) as [Bool]
+        
+        //色関係：Userdefaultの初期設定
+        saveData.register(defaults: ["color": ["white", "red", "yellow", "green"],
+                                     "red": [1.0, 1.0, 1.0, 0.0],
+                                     "green": [1.0, 0.0, 0.94, 0.53],
+                                     "blue": [1.0, 0.0, 0.0, 0.2]] )
+        //色関係:色取得
+        redArray = saveData.array(forKey: "red") as! [CGFloat]
+        greenArray = saveData.array(forKey: "green") as! [CGFloat]
+        blueArray = saveData.array(forKey: "blue") as! [CGFloat]
         
         //残り時間を計算するための下準備、記入された日にち（文字）を日付として取得
         let dateFormater = DateFormatter()
@@ -48,8 +63,8 @@ class ViewController: UIViewController {
         scrollView.frame = self.view.frame
 
         //ここの条件どうしたらいいんだろう？!!!!!!!!!!!!!!!!!!!!!!!!!!
-        if nameArray[0] != "" && dateArray[0] != "" {
-        //if nameArray.isEmpty != true{
+        //if nameArray[0] != "" && dateArray[0] != "" { && dateArray[0] != ""
+        if nameArray.isEmpty != true && nameArray[0] != "" {
             
             //繰り返しを利用して、それぞれのブロックを表示していくよ
             for i in 0 ..< nameArray.count {
@@ -84,17 +99,14 @@ class ViewController: UIViewController {
                 buttom.tag = i
                 buttom.addTarget(self, action: #selector(ViewController.buttomTapped(_:)), for: .touchUpInside)
 
-                
                 //nameをラベル作成
                 let namelabel: UILabel =  UILabel(frame: CGRect(x: labelsX, y: positionY + 105, width: 160, height: 30))
                 namelabel.text = nameArray[i]
-
                 
                 //日付をラベル作成
                 let datelabel = UILabel(frame: CGRect(x: labelsX, y: positionY + 140, width: 150, height: 25))
                 datelabel.text = dateArray[i]
-
-                
+                                
                 //残り時間の計算に入るよ
                 //締切日を取得する
                 let date = dateFormater.date(from: dateArray[i]!)!
@@ -117,12 +129,16 @@ class ViewController: UIViewController {
                 //時間さを単位「分」で数字として入手する
                 let defferenceInt: Int = difference.minute!
                 if defferenceInt <= 1440 || importanceArray[i]! == true {
-                    backgroundLabel.backgroundColor = UIColor.red
+                    backgroundLabel.backgroundColor = UIColor(red: redArray[1], green: greenArray[1], blue: blueArray[1], alpha: 1.0)
                 }else if defferenceInt <= 4320 {
-                    backgroundLabel.backgroundColor = UIColor.yellow
+                    backgroundLabel.backgroundColor = UIColor(red: redArray[2], green: greenArray[2], blue: blueArray[2], alpha: 1.0)
                 }else{
-                    backgroundLabel.backgroundColor = UIColor.green
+                    backgroundLabel.backgroundColor = UIColor(red: redArray[3], green: greenArray[3], blue: blueArray[3], alpha: 1.0)
                 }
+                
+                //背景ラベル角丸くする
+                backgroundLabel.layer.cornerRadius = 10
+                backgroundLabel.clipsToBounds = true
                 
                 //背景ラベル表示
                 scrollView.addSubview(backgroundLabel)
@@ -141,6 +157,8 @@ class ViewController: UIViewController {
                 //残り時間表示
                 scrollView.addSubview(deadlinelabel)
                 
+                //画面背景色を指定
+                self.view.backgroundColor = UIColor(red: redArray[0], green: greenArray[0], blue: blueArray[0], alpha: 1.0)
             }
             
             //xcrollviewをviwのsubviewとして追加
@@ -216,6 +234,15 @@ class ViewController: UIViewController {
         let navigationController = self.storyboard?.instantiateViewController(withIdentifier: "homeNavigationController") as! UINavigationController
         navigationController.modalPresentationStyle = .fullScreen
         self.present(navigationController, animated: false, completion: nil)
+    }
+    
+    func changeColor () {
+        self.view.backgroundColor = UIColor(red: redArray[0], green: greenArray[0], blue: blueArray[0], alpha: 1.0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        changeColor()
     }
     
 

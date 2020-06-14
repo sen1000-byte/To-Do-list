@@ -94,6 +94,7 @@ class AddViewController: UIViewController {
             name.text = ""
             dateField.text = ""
             importance = true
+            //self.dismiss(animated: true, completion: nil)
             performSegue(withIdentifier: "toViewController", sender: nil)
         }else{
             let alert = UIAlertController(title: "エラー", message: "項目を全て埋めてください", preferredStyle: .alert)
@@ -101,6 +102,10 @@ class AddViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
         
+    }
+    
+    @IBAction func cancel() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 

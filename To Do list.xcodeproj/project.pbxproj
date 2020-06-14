@@ -19,6 +19,9 @@
 		337929302485173700BED893 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 3379292F2485173700BED893 /* Realm */; };
 		337929322485173700BED893 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 337929312485173700BED893 /* RealmSwift */; };
 		337929342485222E00BED893 /* completedTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337929332485222E00BED893 /* completedTasks.swift */; };
+		33889228248B9F4100CCB76A /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33889227248B9F4000CCB76A /* ColorCollectionViewCell.swift */; };
+		338EAC72248CDCEB00541D63 /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EAC71248CDCEB00541D63 /* ColorCollectionViewController.swift */; };
+		338EAC74248CE54F00541D63 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338EAC73248CE54F00541D63 /* SelectViewController.swift */; };
 		33E5C46B247A20970028D0FB /* SaveListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5C46A247A20970028D0FB /* SaveListTableViewController.swift */; };
 		33E5C46D247A21360028D0FB /* SaveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5C46C247A21360028D0FB /* SaveListTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +60,9 @@
 		33670D212478A5B0005A5936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33670D692478E184005A5936 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		337929332485222E00BED893 /* completedTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = completedTasks.swift; sourceTree = "<group>"; };
+		33889227248B9F4000CCB76A /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		338EAC71248CDCEB00541D63 /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
+		338EAC73248CE54F00541D63 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		33E5C46A247A20970028D0FB /* SaveListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListTableViewController.swift; sourceTree = "<group>"; };
 		33E5C46C247A21360028D0FB /* SaveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +128,9 @@
 				33E5C46A247A20970028D0FB /* SaveListTableViewController.swift */,
 				33E5C46C247A21360028D0FB /* SaveListTableViewCell.swift */,
 				337929332485222E00BED893 /* completedTasks.swift */,
+				33889227248B9F4000CCB76A /* ColorCollectionViewCell.swift */,
+				338EAC71248CDCEB00541D63 /* ColorCollectionViewController.swift */,
+				338EAC73248CE54F00541D63 /* SelectViewController.swift */,
 			);
 			path = "To Do list";
 			sourceTree = "<group>";
@@ -282,12 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				338EAC74248CE54F00541D63 /* SelectViewController.swift in Sources */,
 				33E5C46D247A21360028D0FB /* SaveListTableViewCell.swift in Sources */,
 				33670D022478A5A9005A5936 /* ViewController.swift in Sources */,
 				33670CFE2478A5A9005A5936 /* AppDelegate.swift in Sources */,
 				33E5C46B247A20970028D0FB /* SaveListTableViewController.swift in Sources */,
 				33670D6A2478E184005A5936 /* AddViewController.swift in Sources */,
 				337929342485222E00BED893 /* completedTasks.swift in Sources */,
+				33889228248B9F4100CCB76A /* ColorCollectionViewCell.swift in Sources */,
+				338EAC72248CDCEB00541D63 /* ColorCollectionViewController.swift in Sources */,
 				33670D002478A5A9005A5936 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

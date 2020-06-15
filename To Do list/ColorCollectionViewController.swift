@@ -13,10 +13,10 @@ private let reuseIdentifier = "Cell"
 class ColorCollectionViewController: UICollectionViewController {
     
     //色情報
-    let colorData: [String] = ["white", "red", "green", "blue", "てきとう", "とこちゃん", "２回目"]
-    let redData: [Int] = [255, 255, 0, 0, 0, 185, 118]
-    let greenData: [Int] = [255, 0, 255, 0, 200, 177, 34]
-    let blueData: [Int] = [255, 0, 0, 255, 100, 165, 46]
+    let colorData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "10", "11", "12", "13"]
+    let redData: [Int] = [255, 255, 196, 255, 255, 119, 255, 255, 223, 145, 226, 159, 35, 150, 40, 20, 183, 25, 45, 160, 23, 127, 189, 41, 255, 255, 78, 250, 240, 186, 138, 77, 25]
+    let greenData: [Int] = [56, 173, 69, 173, 214, 46, 250, 241, 210, 255, 255, 176, 255, 206, 183, 255, 255, 114, 45, 196, 148, 0, 178, 52, 56, 198, 14, 250, 240, 184, 148, 77, 25]
+    let blueData: [Int] = [56, 173, 54, 96, 165, 37, 86, 193, 151, 35, 198, 131, 145, 180, 141, 255, 255, 120, 45, 255, 172, 255, 255, 98, 255, 255, 46, 250, 240, 189, 155, 77, 25]
     
     //色つなぎ変数
     var color: String!
@@ -61,7 +61,7 @@ class ColorCollectionViewController: UICollectionViewController {
         layout.itemSize = CGSize(width: self.view.bounds.width / 3 - 30, height: self.view.bounds.width / 3 - 20)
         collectionView.collectionViewLayout = layout
         //余白
-        layout.sectionInset = UIEdgeInsets(top: 200, left: 25, bottom: 25, right: 25)
+        layout.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         //横間隔の最小値
         layout.minimumInteritemSpacing = 15
         //縦間隔の最小値
@@ -135,13 +135,27 @@ class ColorCollectionViewController: UICollectionViewController {
         saveData.set(blueArray, forKey: "blue")
         
         //ページ戻り
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "Segue", sender: nil)
+        
+        
+        //同じstororyboard内ですよ〜
+        //let storyboard: UIStoryboard = self.storyboard!
+        //ここで移動先のstoryboardを選択
+        //let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        //実際に移動するコード
+        //self.present(viewController, animated: false, completion: nil)
+        
+
+
+        
         
     }
     
     //戻るボタン
     @IBAction func cancle () {
-        self.dismiss(animated: true, completion: nil)
+        //ひとつ前に戻る
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: UICollectionViewDelegate

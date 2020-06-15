@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,7 +293,7 @@
                         <viewLayoutGuide key="safeArea" id="Oo0-Jj-5aU"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Lb-jM-sZw">
-                        <barButtonItem key="leftBarButtonItem" title="もどる" id="Yur-CQ-iiV">
+                        <barButtonItem key="leftBarButtonItem" title="戻る" id="Yur-CQ-iiV">
                             <connections>
                                 <action selector="cancle" destination="v0F-q1-HiU" id="FGG-Ir-mXq"/>
                             </connections>
@@ -366,9 +366,16 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="クリックして色を選択" id="79c-zF-qXM">
-                        <barButtonItem key="leftBarButtonItem" title="もどる" id="4zZ-YB-R99"/>
+                        <barButtonItem key="leftBarButtonItem" title="もどる" id="4zZ-YB-R99">
+                            <connections>
+                                <action selector="cancle" destination="Si2-1k-YOy" id="BXb-FV-qts"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="DVH-wd-Nqo" kind="presentation" identifier="Segue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="p8s-BK-VaU"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTo-rW-aJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -415,6 +422,9 @@
             <point key="canvasLocation" x="992.75362318840587" y="-589.28571428571422"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="p8s-BK-VaU"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>

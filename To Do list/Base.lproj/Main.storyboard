@@ -245,28 +245,36 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFK-o1-BvH">
                                         <rect key="frame" x="0.0" y="0.0" width="254" height="66"/>
                                         <color key="backgroundColor" red="1" green="0.44851000120000001" blue="0.33866652400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="背景"/>
+                                        <state key="normal" title="背景">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="background" destination="v0F-q1-HiU" eventType="touchUpInside" id="WHv-qJ-KJp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rr4-F8-cNa">
                                         <rect key="frame" x="0.0" y="136" width="254" height="66"/>
-                                        <state key="normal" title="締め切りまで残り１日以下"/>
+                                        <state key="normal" title="締め切りまで残り１日以下">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="oneDay" destination="v0F-q1-HiU" eventType="touchUpInside" id="NV7-nX-h4G"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgp-Nz-X8T">
                                         <rect key="frame" x="0.0" y="272" width="254" height="66"/>
-                                        <state key="normal" title="締め切りまで残り３日以下"/>
+                                        <state key="normal" title="締め切りまで残り３日以下">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="threeDays" destination="v0F-q1-HiU" eventType="touchUpInside" id="l8o-h0-QdE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-XI-BgA">
                                         <rect key="frame" x="0.0" y="408" width="254" height="66"/>
-                                        <state key="normal" title="締め切りまで残り３日以上"/>
+                                        <state key="normal" title="締め切りまで残り３日以上">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="manyDays" destination="v0F-q1-HiU" eventType="touchUpInside" id="Bmz-fr-qOM"/>
                                         </connections>
@@ -337,21 +345,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JB-FL-GWi">
-                                            <rect key="frame" x="43" y="28" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JB-FL-GWi">
+                                            <rect key="frame" x="24" y="24" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="Uem-FO-avA"/>
+                                                <constraint firstAttribute="width" constant="80" id="lmU-Wb-cpo"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="50"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLv-1e-SHI">
-                                            <rect key="frame" x="43" y="67" width="43" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLv-1e-SHI">
+                                            <rect key="frame" x="42.5" y="53.5" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="9JB-FL-GWi" firstAttribute="centerX" secondItem="R0k-tj-Gqj" secondAttribute="centerX" id="32B-RB-5ua"/>
+                                        <constraint firstItem="lLv-1e-SHI" firstAttribute="centerX" secondItem="R0k-tj-Gqj" secondAttribute="centerX" id="5H2-Kp-iS7"/>
+                                        <constraint firstItem="lLv-1e-SHI" firstAttribute="centerY" secondItem="R0k-tj-Gqj" secondAttribute="centerY" id="Fgj-j8-ygk"/>
+                                        <constraint firstItem="9JB-FL-GWi" firstAttribute="centerY" secondItem="R0k-tj-Gqj" secondAttribute="centerY" id="jrc-Tm-zIM"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="colorcircle" destination="9JB-FL-GWi" id="a1W-OU-ojA"/>
@@ -380,6 +401,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTo-rW-aJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2715.9420289855075" y="-577.23214285714278"/>
+        </scene>
+        <!--Main Collection View Controller-->
+        <scene sceneID="7AC-Z0-YoB">
+            <objects>
+                <collectionViewController id="CNI-Xh-hgh" customClass="MainCollectionViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Qpq-2T-Vpn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SMM-0E-MK0">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="C6F-3z-KPe" customClass="MainCollectionViewCell" customModule="To_Do_list" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gR4-aH-HL2">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-41-SYa">
+                                            <rect key="frame" x="43" y="8" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="締め切り日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-sT-Np0">
+                                            <rect key="frame" x="17" y="37" width="87" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残り時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-6B-o4A">
+                                            <rect key="frame" x="25" y="66" width="70" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="Wm4-sT-Np0" id="x05-SN-cm4"/>
+                                    <outlet property="deadlineLabel" destination="B4f-6B-o4A" id="g23-S6-r3l"/>
+                                    <outlet property="nameLabel" destination="rn1-41-SYa" id="ZKw-s1-tRi"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="CNI-Xh-hgh" id="R8o-Hs-ROY"/>
+                            <outlet property="delegate" destination="CNI-Xh-hgh" id="bTt-uc-r11"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQh-wx-eGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146.37681159420291" y="-596.65178571428567"/>
         </scene>
         <!--homeNavigationController-->
         <scene sceneID="Jib-LW-uFW">
@@ -423,7 +506,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p8s-BK-VaU"/>
+        <segue reference="qac-Qz-FzH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>

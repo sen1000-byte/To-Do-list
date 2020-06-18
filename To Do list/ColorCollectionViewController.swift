@@ -14,9 +14,9 @@ class ColorCollectionViewController: UICollectionViewController {
     
     //色情報
     let colorData: [String] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "10", "11", "12", "13"]
-    let redData: [Int] = [255, 255, 196, 255, 255, 119, 255, 255, 223, 145, 226, 159, 35, 150, 40, 20, 183, 25, 45, 160, 23, 127, 189, 41, 255, 255, 78, 250, 240, 186, 138, 77, 25]
-    let greenData: [Int] = [56, 173, 69, 173, 214, 46, 250, 241, 210, 255, 255, 176, 255, 206, 183, 255, 255, 114, 45, 196, 148, 0, 178, 52, 56, 198, 14, 250, 240, 184, 148, 77, 25]
-    let blueData: [Int] = [56, 173, 54, 96, 165, 37, 86, 193, 151, 35, 198, 131, 145, 180, 141, 255, 255, 120, 45, 255, 172, 255, 255, 98, 255, 255, 46, 250, 240, 189, 155, 77, 25]
+    let redData: [Int] = [255, 255, 196, 255, 255, 119, 255, 245, 223, 145, 226, 159, 35, 150, 40, 20, 183, 25, 45, 160, 23, 127, 189, 41, 255, 255, 78, 250, 240, 186, 138, 77, 25]
+    let greenData: [Int] = [56, 173, 69, 173, 214, 46, 250, 245, 210, 255, 255, 176, 255, 206, 183, 255, 255, 114, 45, 196, 148, 0, 178, 52, 56, 198, 14, 250, 240, 184, 148, 77, 25]
+    let blueData: [Int] = [56, 173, 54, 96, 165, 37, 86, 193, 151, 35, 198, 131, 145, 180, 141, 255, 255, 120, 230, 255, 172, 255, 255, 98, 255, 255, 46, 250, 240, 189, 155, 77, 25]
     
     //色つなぎ変数
     var color: String!
@@ -67,6 +67,8 @@ class ColorCollectionViewController: UICollectionViewController {
         //縦間隔の最小値
         layout.minimumLineSpacing = 15
         
+
+        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -74,6 +76,10 @@ class ColorCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        //画面背景色の指定
+        self.collectionView.backgroundColor = UIColor(red: redArray[0], green: greenArray[0], blue: blueArray[0], alpha: 1.0)
+        
 
         // Do any additional setup after loading the view.
     }
@@ -108,8 +114,14 @@ class ColorCollectionViewController: UICollectionViewController {
         
         //colorcircleのラベル背景色を設定
         cell.colorcircle.backgroundColor = UIColor(red: CGFloat(redData[indexPath.item]) / 255.0, green: CGFloat(greenData[indexPath.item]) / 255.0, blue: CGFloat(blueData[indexPath.item]) / 255.0, alpha: 1.0)
+        //ラベル角丸
+        cell.colorcircle.layer.cornerRadius = 80
+        
         //nameのテキスト設定
         cell.name.text = colorData[indexPath.item]
+        
+        //背景色白
+        cell.backgroundColor = UIColor.white
 
         // Configure the cell"
     

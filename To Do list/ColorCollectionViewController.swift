@@ -146,9 +146,9 @@ class ColorCollectionViewController: UICollectionViewController {
         saveData.set(greenArray, forKey: "green")
         saveData.set(blueArray, forKey: "blue")
         
-        //ページ戻り
-        //self.dismiss(animated: true, completion: nil)
-        self.performSegue(withIdentifier: "Segue", sender: nil)
+        //ひとつ前に戻る
+        self.navigationController?.popViewController(animated: true)
+
         
         
         //同じstororyboard内ですよ〜

@@ -84,18 +84,23 @@ class AddViewController: UIViewController {
     //保存ボタンが押されたときに発動
     @IBAction func saveList() {
         //空でないかチェック！！！！！これだとスペースが入ってたら大丈夫になっちゃう！！！！！
-        if name.text != "" && dateField.text != "" {
-            nameArray.append(String(name.text!))
-            dateArray.append(String(dateField.text!))
-            importanceArray.append(Bool(importance!))
+        if name.text != "" && dateField.text != ""{
+            if nameArray[0] == "" {
+                nameArray[0] = String(name.text!)
+                dateArray[0] = String(dateField.text!)
+                importanceArray[0] = Bool(importance!)
+            }else{
+                nameArray.append(String(name.text!))
+                dateArray.append(String(dateField.text!))
+                importanceArray.append(Bool(importance!))
+            }
             saveData.set(nameArray, forKey: "name")
             saveData.set(dateArray, forKey: "date")
             saveData.set(importanceArray, forKey: "importance")
             name.text = ""
             dateField.text = ""
             importance = true
-            //self.dismiss(animated: true, completion: nil)
-            performSegue(withIdentifier: "toViewController", sender: nil)
+            self.dismiss(animated: true, completion: nil)
         }else{
             let alert = UIAlertController(title: "エラー", message: "項目を全て埋めてください", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

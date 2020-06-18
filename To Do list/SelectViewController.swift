@@ -34,6 +34,13 @@ class SelectViewController: UIViewController {
                                      "red": [1.0, 1.0, 1.0, 0.0],
                                      "green": [1.0, 0.0, 0.94, 0.53],
                                      "blue": [1.0, 0.0, 0.0, 0.2]] )
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
         //色関係:色取得
         redArray = saveData.array(forKey: "red") as! [CGFloat]
         greenArray = saveData.array(forKey: "green") as! [CGFloat]
@@ -43,8 +50,6 @@ class SelectViewController: UIViewController {
         oneDayColor.backgroundColor = UIColor(red: redArray[1], green: greenArray[1], blue: blueArray[1], alpha: 1.0)
         threeDayColor.backgroundColor = UIColor(red: redArray[2], green: greenArray[2], blue: blueArray[2], alpha: 1.0)
         moreDaysColor.backgroundColor = UIColor(red: redArray[3], green: greenArray[3], blue: blueArray[3], alpha: 1.0)
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func background() {
@@ -75,7 +80,8 @@ class SelectViewController: UIViewController {
     }
     
     @IBAction func cancle () {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 

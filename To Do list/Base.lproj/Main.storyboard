@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DVH-wd-Nqo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ddc-Q9-eC4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,29 +21,19 @@
                     <toolbarItems>
                         <barButtonItem title="終了したタスクを確認する" width="467" id="JWO-ez-Whk">
                             <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="bi5-sC-o0N" kind="presentation" modalPresentationStyle="fullScreen" id="ad2-fF-gBX"/>
-                            </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="4II-3C-KlQ">
-                        <barButtonItem key="leftBarButtonItem" title="模様替え" id="ibV-Ft-jEU">
-                            <connections>
-                                <segue destination="33Y-oG-BM9" kind="presentation" modalPresentationStyle="fullScreen" id="BLc-LI-39x"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="模様替え" id="ibV-Ft-jEU"/>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="LfO-et-ySc">
                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="GEr-Se-pf7" kind="presentation" modalPresentationStyle="fullScreen" id="NBm-1y-vfp"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="120.53571428571428"/>
+            <point key="canvasLocation" x="-39" y="-560"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="yN5-46-qtP">
@@ -110,7 +100,6 @@
                                         </state>
                                         <connections>
                                             <action selector="saveList" destination="GEr-Se-pf7" eventType="touchUpInside" id="7Ii-Bi-Nbb"/>
-                                            <segue destination="DVH-wd-Nqo" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="qac-Qz-FzH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -141,12 +130,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPE-O1-FDP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1805.7971014492755" y="125.89285714285714"/>
+            <point key="canvasLocation" x="1903" y="126"/>
         </scene>
         <!--終了したタスク一覧-->
         <scene sceneID="9Wa-UV-BKJ">
             <objects>
-                <tableViewController id="iZt-GH-JGv" customClass="SaveListTableViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="iZt-GH-JGv" customClass="SaveListTableViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="n3z-on-Kfj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,30 +200,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBq-nE-3bK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156.521739130435" y="847.76785714285711"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pFN-VK-Iec">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bi5-sC-o0N" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="plh-mc-one">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iZt-GH-JGv" kind="relationship" relationship="rootViewController" id="D6E-fc-QEK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xl7-Bz-Kxk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="393" y="848"/>
+            <point key="canvasLocation" x="1903" y="847"/>
         </scene>
         <!--Select View Controller-->
         <scene sceneID="W1l-wE-SBL">
             <objects>
-                <viewController id="v0F-q1-HiU" customClass="SelectViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="v0F-q1-HiU" customClass="SelectViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlx-a3-Wo9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,7 +274,7 @@
                     <navigationItem key="navigationItem" id="2Lb-jM-sZw">
                         <barButtonItem key="leftBarButtonItem" title="戻る" id="Yur-CQ-iiV">
                             <connections>
-                                <action selector="cancle" destination="v0F-q1-HiU" id="FGG-Ir-mXq"/>
+                                <action selector="cancle" destination="v0F-q1-HiU" id="fh4-al-59N"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pJg-MW-hme">
@@ -326,7 +297,7 @@
         <!--クリックして色を選択-->
         <scene sceneID="MRg-Bu-FO6">
             <objects>
-                <collectionViewController id="Si2-1k-YOy" customClass="ColorCollectionViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController hidesBottomBarWhenPushed="YES" id="Si2-1k-YOy" customClass="ColorCollectionViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VdC-5Z-wBE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,15 +365,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <segue destination="DVH-wd-Nqo" kind="presentation" identifier="Segue" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="p8s-BK-VaU"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTo-rW-aJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2715.9420289855075" y="-577.23214285714278"/>
+            <point key="canvasLocation" x="2729" y="-589"/>
         </scene>
-        <!--Main Collection View Controller-->
+        <!--Title-->
         <scene sceneID="7AC-Z0-YoB">
             <objects>
                 <collectionViewController id="CNI-Xh-hgh" customClass="MainCollectionViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
@@ -459,10 +427,30 @@
                             <outlet property="delegate" destination="CNI-Xh-hgh" id="bTt-uc-r11"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="TmU-Uz-HkJ">
+                            <connections>
+                                <segue destination="iZt-GH-JGv" kind="show" id="oTm-CJ-e55"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="tZ6-K7-kcK">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Ioc-ne-4mX">
+                            <connections>
+                                <segue destination="v0F-q1-HiU" kind="show" id="3qO-jr-zIf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qu1-wW-R9k">
+                            <connections>
+                                <segue destination="GEr-Se-pf7" kind="presentation" modalPresentationStyle="fullScreen" id="LyS-Jm-cw9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQh-wx-eGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146.37681159420291" y="-596.65178571428567"/>
+            <point key="canvasLocation" x="957" y="126"/>
         </scene>
         <!--homeNavigationController-->
         <scene sceneID="Jib-LW-uFW">
@@ -484,30 +472,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W00-Bz-hvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
+            <point key="canvasLocation" x="-826" y="-560"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="qe2-jX-9UR">
+        <scene sceneID="aTQ-3x-8hA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="33Y-oG-BM9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="Ddc-Q9-eC4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLU-oV-WBw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uz9-PR-Mje">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7A3-77-4Gc">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="v0F-q1-HiU" kind="relationship" relationship="rootViewController" id="1K8-Z8-iGs"/>
+                        <segue destination="CNI-Xh-hgh" kind="relationship" relationship="rootViewController" id="YnJ-7I-rAk"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dri-j0-BU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oFC-im-xre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992.75362318840587" y="-589.28571428571422"/>
+            <point key="canvasLocation" x="-39" y="126"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="qac-Qz-FzH"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
     </resources>

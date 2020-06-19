@@ -42,12 +42,13 @@ class MainCollectionViewController: UICollectionViewController {
         //レイアウト設定
         let layout = UICollectionViewFlowLayout()
         //cellの大きさ
-        layout.itemSize = CGSize(width: self.view.bounds.width / 2 - 40, height: self.view.bounds.width / 2 - 100)
+        //layout.itemSize = CGSize(width: self.view.bounds.width / 2 - 30, height: self.view.bounds.width / 2 - 100)
+        layout.itemSize = CGSize(width: 170, height: 100)
         collectionView.collectionViewLayout = layout
         //余白
         layout.sectionInset = UIEdgeInsets(top: 25, left: 25, bottom: 25, right: 25)
         //横間隔の最小値
-        layout.minimumInteritemSpacing = 10
+        layout.minimumInteritemSpacing = 5
         //縦間隔の最小値
         layout.minimumLineSpacing = 15
 
@@ -92,6 +93,12 @@ class MainCollectionViewController: UICollectionViewController {
         
         //背景の色を設定
         self.collectionView.backgroundColor = UIColor(red: redArray[0], green: greenArray[0], blue: blueArray[0], alpha: 1.0)
+        
+        //let backgroundLabel: UILabel!
+        //backgroundLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.screenSize.width, height: self.screenSize.height)
+        //backgroundLabel.backgroundColor = UIColor(red: redArray[0], green: greenArray[0], blue: blueArray[0], alpha: 0.7)
+        //self.view.addSubview(backgroundLabel)
+        
 
         self.collectionView.reloadData()
         

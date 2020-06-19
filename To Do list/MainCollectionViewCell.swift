@@ -18,8 +18,8 @@ class MainCollectionViewCell: UICollectionViewCell {
        required init?(coder aDecoder: NSCoder) {
            super.init(coder: aDecoder)
            
-           //self.layer.borderWidth = 1.0
-           //self.layer.borderColor = UIColor.darkGray.cgColor
+           self.layer.borderWidth = 1.0
+           self.layer.borderColor = UIColor.darkGray.cgColor
            
            self.layer.cornerRadius = 10
            

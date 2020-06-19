@@ -8,33 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem title="終了したタスクを確認する" width="467" id="JWO-ez-Whk">
-                            <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" id="4II-3C-KlQ">
-                        <barButtonItem key="leftBarButtonItem" title="模様替え" id="ibV-Ft-jEU"/>
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="LfO-et-ySc">
-                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-39" y="-560"/>
-        </scene>
         <!--Add View Controller-->
         <scene sceneID="yN5-46-qtP">
             <objects>
@@ -272,7 +245,7 @@
                         <viewLayoutGuide key="safeArea" id="Oo0-Jj-5aU"/>
                     </view>
                     <navigationItem key="navigationItem" id="2Lb-jM-sZw">
-                        <barButtonItem key="leftBarButtonItem" title="戻る" id="Yur-CQ-iiV">
+                        <barButtonItem key="leftBarButtonItem" title="もどる" id="Yur-CQ-iiV">
                             <connections>
                                 <action selector="cancle" destination="v0F-q1-HiU" id="fh4-al-59N"/>
                             </connections>
@@ -310,18 +283,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="pEu-Qx-Lzj" customClass="ColorCollectionViewCell" customModule="To_Do_list" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="R0k-tj-Gqj">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9JB-FL-GWi">
-                                            <rect key="frame" x="24" y="24" width="80" height="80"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="80" id="Uem-FO-avA"/>
-                                                <constraint firstAttribute="width" constant="80" id="lmU-Wb-cpo"/>
-                                            </constraints>
+                                            <rect key="frame" x="15" y="20" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -332,17 +301,19 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLv-1e-SHI">
-                                            <rect key="frame" x="42.5" y="53.5" width="43" height="21"/>
+                                            <rect key="frame" x="-6.5" y="9.5" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9JB-FL-GWi" firstAttribute="centerX" secondItem="R0k-tj-Gqj" secondAttribute="centerX" id="32B-RB-5ua"/>
                                         <constraint firstItem="lLv-1e-SHI" firstAttribute="centerX" secondItem="R0k-tj-Gqj" secondAttribute="centerX" id="5H2-Kp-iS7"/>
                                         <constraint firstItem="lLv-1e-SHI" firstAttribute="centerY" secondItem="R0k-tj-Gqj" secondAttribute="centerY" id="Fgj-j8-ygk"/>
-                                        <constraint firstItem="9JB-FL-GWi" firstAttribute="centerY" secondItem="R0k-tj-Gqj" secondAttribute="centerY" id="jrc-Tm-zIM"/>
+                                        <constraint firstAttribute="trailing" secondItem="9JB-FL-GWi" secondAttribute="trailing" constant="15" id="OE1-zR-SNi"/>
+                                        <constraint firstItem="9JB-FL-GWi" firstAttribute="top" secondItem="R0k-tj-Gqj" secondAttribute="top" constant="20" id="Rka-RU-a4d"/>
+                                        <constraint firstAttribute="bottom" secondItem="9JB-FL-GWi" secondAttribute="bottom" constant="20" id="ULd-HK-TB7"/>
+                                        <constraint firstItem="9JB-FL-GWi" firstAttribute="leading" secondItem="R0k-tj-Gqj" secondAttribute="leading" constant="15" id="cQi-uK-JRZ"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
@@ -386,34 +357,42 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="C6F-3z-KPe" customClass="MainCollectionViewCell" customModule="To_Do_list" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="96.5" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gR4-aH-HL2">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="96.5" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-41-SYa">
-                                            <rect key="frame" x="43" y="8" width="35" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="締め切り日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-sT-Np0">
-                                            <rect key="frame" x="17" y="37" width="87" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残り時間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-6B-o4A">
-                                            <rect key="frame" x="25" y="66" width="70" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lix-6O-pIw">
+                                            <rect key="frame" x="10" y="25.5" width="76.5" height="77.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn1-41-SYa">
+                                                    <rect key="frame" x="21" y="0.0" width="35" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="締め切り日" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm4-sT-Np0">
+                                                    <rect key="frame" x="0.0" y="28.5" width="76.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残り時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4f-6B-o4A">
+                                                    <rect key="frame" x="3.5" y="57" width="69.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Lix-6O-pIw" firstAttribute="centerY" secondItem="gR4-aH-HL2" secondAttribute="centerY" id="3h5-9d-jpu"/>
+                                        <constraint firstItem="Lix-6O-pIw" firstAttribute="leading" secondItem="gR4-aH-HL2" secondAttribute="leading" constant="10" id="NBS-QD-xD6"/>
+                                        <constraint firstItem="Lix-6O-pIw" firstAttribute="centerX" secondItem="gR4-aH-HL2" secondAttribute="centerX" id="fsv-F9-dvt"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lix-6O-pIw" secondAttribute="trailing" constant="10" id="kRD-sZ-tPx"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="Wm4-sT-Np0" id="x05-SN-cm4"/>
@@ -428,14 +407,14 @@
                         </connections>
                     </collectionView>
                     <toolbarItems>
-                        <barButtonItem title="Item" id="TmU-Uz-HkJ">
+                        <barButtonItem title="終了したタスクを確認する" width="423" id="TmU-Uz-HkJ">
                             <connections>
                                 <segue destination="iZt-GH-JGv" kind="show" id="oTm-CJ-e55"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="tZ6-K7-kcK">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="Ioc-ne-4mX">
+                        <barButtonItem key="leftBarButtonItem" title="模様替え" id="Ioc-ne-4mX">
                             <connections>
                                 <segue destination="v0F-q1-HiU" kind="show" id="3qO-jr-zIf"/>
                             </connections>
@@ -466,9 +445,6 @@
                         <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uIl-si-aDt"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W00-Bz-hvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,7 +473,4 @@
             <point key="canvasLocation" x="-39" y="126"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
-    </resources>
 </document>

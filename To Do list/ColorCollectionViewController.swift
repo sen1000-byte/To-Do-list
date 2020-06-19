@@ -115,7 +115,7 @@ class ColorCollectionViewController: UICollectionViewController {
         //colorcircleのラベル背景色を設定
         cell.colorcircle.backgroundColor = UIColor(red: CGFloat(redData[indexPath.item]) / 255.0, green: CGFloat(greenData[indexPath.item]) / 255.0, blue: CGFloat(blueData[indexPath.item]) / 255.0, alpha: 1.0)
         //ラベル角丸
-        cell.colorcircle.layer.cornerRadius = 80
+        cell.colorcircle.layer.cornerRadius = self.view.bounds.width / 3 - 60
         
         //nameのテキスト設定
         cell.name.text = colorData[indexPath.item]

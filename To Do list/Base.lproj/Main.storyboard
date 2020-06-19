@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="1903" y="126"/>
         </scene>
-        <!--終了したタスク一覧-->
+        <!--完了したタスク一覧-->
         <scene sceneID="9Wa-UV-BKJ">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="iZt-GH-JGv" customClass="SaveListTableViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
@@ -162,7 +162,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="終了したタスク一覧" id="Cs1-gR-g7b">
+                    <navigationItem key="navigationItem" title="完了したタスク一覧" id="Cs1-gR-g7b">
                         <barButtonItem key="leftBarButtonItem" title="もどる" id="JZz-TU-nqn">
                             <connections>
                                 <action selector="back" destination="iZt-GH-JGv" id="R61-th-6Ln"/>
@@ -225,8 +225,8 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="クリックして色を変更したい部分を選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXX-Vp-9nX">
-                                <rect key="frame" x="51" y="138" width="312" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タップして色を変更したい部分を選択" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXX-Vp-9nX">
+                                <rect key="frame" x="60" y="138" width="294.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -267,7 +267,7 @@
             </objects>
             <point key="canvasLocation" x="1902.8985507246377" y="-589.28571428571422"/>
         </scene>
-        <!--クリックして色を選択-->
+        <!--タップして色を選択-->
         <scene sceneID="MRg-Bu-FO6">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="Si2-1k-YOy" customClass="ColorCollectionViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
@@ -328,7 +328,7 @@
                         </connections>
                     </collectionView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="クリックして色を選択" id="79c-zF-qXM">
+                    <navigationItem key="navigationItem" title="タップして色を選択" id="79c-zF-qXM">
                         <barButtonItem key="leftBarButtonItem" title="もどる" id="4zZ-YB-R99">
                             <connections>
                                 <action selector="cancle" destination="Si2-1k-YOy" id="BXb-FV-qts"/>
@@ -341,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="2729" y="-589"/>
         </scene>
-        <!--Title-->
+        <!--タスクをタップして完了にする-->
         <scene sceneID="7AC-Z0-YoB">
             <objects>
                 <collectionViewController id="CNI-Xh-hgh" customClass="MainCollectionViewController" customModule="To_Do_list" customModuleProvider="target" sceneMemberID="viewController">
@@ -407,13 +407,13 @@
                         </connections>
                     </collectionView>
                     <toolbarItems>
-                        <barButtonItem title="終了したタスクを確認する" width="423" id="TmU-Uz-HkJ">
+                        <barButtonItem title="完了したタスクを確認する" width="423" id="TmU-Uz-HkJ">
                             <connections>
                                 <segue destination="iZt-GH-JGv" kind="show" id="oTm-CJ-e55"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Title" id="tZ6-K7-kcK">
+                    <navigationItem key="navigationItem" title="タスクをタップして完了にする" id="tZ6-K7-kcK">
                         <barButtonItem key="leftBarButtonItem" title="模様替え" id="Ioc-ne-4mX">
                             <connections>
                                 <segue destination="v0F-q1-HiU" kind="show" id="3qO-jr-zIf"/>

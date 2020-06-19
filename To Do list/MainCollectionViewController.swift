@@ -207,6 +207,12 @@ class MainCollectionViewController: UICollectionViewController {
                                                 self.nameArray.remove(at: indexPath.item)
                                                 self.dateArray.remove(at: indexPath.item)
                                                 self.importanceArray.remove(at: indexPath.item)
+                                                    
+                                                    if self.nameArray.isEmpty == true {
+                                                        self.nameArray.append("")
+                                                        self.dateArray.append("")
+                                                        self.importanceArray.append(true)
+                                                    }
                                             
                                                 //要素を削除した配列ををUserDefaultに上書き保存
                                                 self.saveData.set(self.nameArray, forKey: "name")

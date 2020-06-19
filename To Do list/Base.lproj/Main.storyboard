@@ -431,25 +431,6 @@
             </objects>
             <point key="canvasLocation" x="957" y="126"/>
         </scene>
-        <!--homeNavigationController-->
-        <scene sceneID="Jib-LW-uFW">
-            <objects>
-                <navigationController storyboardIdentifier="homeNavigationController" title="homeNavigationController" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="DVH-wd-Nqo" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qLe-Cf-tyO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ax9-9Z-T9p">
-                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W00-Bz-hvc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-826" y="-560"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTQ-3x-8hA">
             <objects>

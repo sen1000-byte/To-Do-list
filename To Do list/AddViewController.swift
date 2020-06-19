@@ -43,7 +43,6 @@ class AddViewController: UIViewController {
         //if saveData.array(forKey: "importance") != nil {
             importanceArray = saveData.array(forKey: "importance") as! [Bool]
         //}
-        print(nameArray[0] + "1")
         //ピッカー設定!!！！！日付に関してよくわかってへんよ！！！！！！！！！！！
         datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
         datePicker.timeZone = NSTimeZone.local
@@ -91,7 +90,6 @@ class AddViewController: UIViewController {
     @IBAction func saveList() {
         //空でないかチェック！！！！！これだとスペースが入ってたら大丈夫になっちゃう！！！！！
         if name.text != "" && dateField.text != ""{
-            print(nameArray[0] + "2")
             if nameArray[0] == "" {
                 nameArray[0] = String(name.text!)
                 dateArray[0] = String(dateField.text!)
